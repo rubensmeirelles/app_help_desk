@@ -12,7 +12,7 @@
     // 1º parâmetro -> nome do arquivo
     // 2º parâmetro -> a = apenas para escrita
 
-    $arquivo = fopen('arquivo.hd', 'a');
+    $arquivo = fopen('../../app_help_desk/arquivo.hd', 'a');
 
     //ESCREVENDO NO ARQUIVO
     fwrite($arquivo, $texto);

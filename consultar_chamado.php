@@ -4,7 +4,7 @@
   //chamados
   $chamados = array();
 
-  $arquivo = fopen('arquivo.hd', 'r');
+  $arquivo = fopen('../../app_help_desk/arquivo.hd', 'r');
 
   //percorre o arquivo nas linhas a serem recuperadas
   while(!feof($arquivo)) { //feof - testa pelo fim de um arquivo
