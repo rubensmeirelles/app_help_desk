@@ -63,13 +63,22 @@
                       <?php 
                         $chamado_dados = explode('#', $chamado);  
 
+                        //verifica o perfil do usuário para visualizar ou não o chamado
+                        if($_SESSION['perfil_id'] == 2){
+                          //só exibe se foi aberto pelo usuário logado
+                          if($_SESSION['id'] != $chamado_dados[0]){
+                            continue;
+                          }
+                        }
+
                         if(count($chamado_dados) < 3) {
                           continue;
                         }
                       ?>
-                      <h5 class="card-title">Título: <?php echo $chamado_dados[0];?></h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Categoria: <?php echo $chamado_dados[1];?></h6>
-                      <p class="card-text">Descrição: <?php echo $chamado_dados[2];?></p>
+                      <h5 class="card-title">Usuário: <?php echo $chamado_dados[0];?></h5>
+                      <h5 class="card-title">Título: <?php echo $chamado_dados[1];?></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Categoria: <?php echo $chamado_dados[2];?></h6>
+                      <p class="card-text">Descrição: <?php echo $chamado_dados[3];?></p>
 
                     </div>
                   </div>

@@ -1,12 +1,12 @@
 <?php
-
+    session_start();
     //VARIÁVEIS PARA RECEBER OS DADOS E UTILIZANDO O # PARA SEPARAR OS TEXTOS DAS VARIÁVEIS
     //STR_REPLACE UTILIZADO PARA CASO SEJA ESCRITO O # EMA ALGUM CAMPO SERÁ SUBSTITUÍDO POR - 
     $titulo = str_replace('#', '-', $_POST['titulo']);
     $categoria = str_replace('#', '-', $_POST['categoria']);
     $descricao = str_replace('#', '-', $_POST['descricao']);
 
-    $texto = $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
+    $texto = $_SESSION['id'] . '#' . $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
 
     //ABRIR ARQUIVO DE TEXTO
     // 1º parâmetro -> nome do arquivo
