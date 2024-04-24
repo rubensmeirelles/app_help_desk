@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     //VARIÁVEL PARA VERIFICAR SE A AUTENTICAÇÃO FOI REALIZADA
     $usuario_autenticado = false;
 
@@ -17,7 +19,9 @@
 
     if($usuario_autenticado){
         echo 'Usuário autenticado';
+        $_SESSION['autenticado'] = 'SIM';
     } else {
+        $_SESSION['autenticado'] = 'NÃO';
         header('Location: index.php?login=erro');
     }
 

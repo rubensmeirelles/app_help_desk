@@ -41,11 +41,13 @@
                 <input type="password" class="form-control" placeholder="Senha" name="senha">
               </div>
 
-              <? if (isset($_GET['login']) && $_GET['lohin'] == 'erro') {?>
+              <?php if(isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
+                <div class="alert alert-danger">Usuário ou senha inválidos!</div>
+              <?php } ?>
 
-                <div class="text-danger">Usuário ou senha inválidos!:(</div>
-
-              <? } ?>
+              <?php if(isset($_GET['login']) && $_GET['login'] == 'erro2') { ?>
+                <div class="alert alert-danger">Efetue login para acessar essa página!</div>
+              <?php } ?>
 
               <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
             </form>
